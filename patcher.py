@@ -6,12 +6,11 @@ print("===РАБОТАЕМ. ПАТЧИМ. СТРУЯЧИМ.===")
 #Папка, где лежат нарезанные файлы
 TARGET_DIR = "converted_scripts"
 
-#Список патчей: (Имя файла, Что заменить, На что заменить)
 PATCHES = [
     (
-        "239_v1xxx_run3_medblok2.rpy",          # Файл
-        "label v1xxx_run3_medblok2:",           # Старая строка
-        "label v1xxx_run3_medblok2s:"           # Новая строка
+        "239_v1xxx_run3_medblok2.rpy",          #файл
+        "label v1xxx_run3_medblok2:",           #старая строка
+        "label v1xxx_run3_medblok2s:"           #новая строка
     ),
 ]
 
@@ -36,7 +35,7 @@ def apply_patches():
                     print(f"[OK] Патч применен: {filename}")
                     count += 1
                 else:
-                    #Проверяем, есть ли исправления
+                    #проверяем, не сделаны ли уже исправления
                     if new_str in content:
                         print(f"[SKIP] Уже исправлено: {filename}")
                     else:
@@ -49,4 +48,5 @@ def apply_patches():
     print(f"Патчинг завершен. Применено правок: {count}")
 
 if __name__ == "__main__":
+
     apply_patches()
